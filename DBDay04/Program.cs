@@ -23,11 +23,11 @@
 
             var oldestAnimalinHospital = animalsInHospital.Max(d => d.Age);
 
-            var vaccinatedAnimals = animalsInHospital.Where(a => a.IsVaccinated == true).ToList();
+            var vaccinatedAnimals = animalsInHospital.Where(a => a.IsVaccinated).ToList();
 
             var fourLeggedAnimalsOver3 = animalsInHospital.Where(f => f.AmountOfLegs == 4 && f.Age > 3).ToList();
 
-            var isThereAhadowAnimal = animalsInHospital.Where(n => n.Name == "Shadow");
+            var isThereAhadowAnimal = animalsInHospital.Any(n => n.Name == "Shadow");
         }
     }
 }
